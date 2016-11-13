@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'production';
 const PATHS = {
@@ -48,5 +49,19 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
     }),
+    new BrowserSyncPlugin(
+      {
+        // browse to http://localhost:3000/ during development
+        host: 'localhost',
+        port: 8081,
+        proxy: 'http://localhost:8080/',
+      },
+      // plugin options
+      {
+        // prevent BrowserSync from reloading the page
+        // and let Webpack Dev Server take care of this
+        reload: false,
+      }
+    ),
   ],
 };
