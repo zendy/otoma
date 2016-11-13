@@ -1,0 +1,29 @@
+{
+  "name": "otoma",
+  "version": "1.0.0",
+  "description": "Automa Deck",
+  "main": "app.js",
+  "scripts": {
+    "build": "webpack --progress --watch",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://zendy@github.com/zendy/otoma.git"
+  },
+  "author": "Zendy Wongso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zendy/otoma/issues"
+  },
+  "homepage": "https://github.com/zendy/otoma#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015-native-modules": "^6.9.4"
+  },
+  "devDependencies": {
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.10"
+  }
+}
